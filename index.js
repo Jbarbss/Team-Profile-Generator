@@ -4,11 +4,10 @@ const Engineer = require("./lib/engineer");
 const Intern = require("./lib/intern");
 const Manager = require("./lib/manager");
 
-
 const newTeamMembers = [];
 
 function init() {
-    startHtml();
+  startHtml();
   getMemberInfo();
 }
 
@@ -40,7 +39,7 @@ function getMemberInfo() {
       },
     ])
 
-    .then(function ({name, role, id, email}) {
+    .then(function ({ name, role, id, email }) {
       let roleInfo = "";
       if (role === "Engineer") {
         roleInfo = "Github Username";
@@ -64,7 +63,7 @@ function getMemberInfo() {
           },
         ])
 
-        .then(function ({roleInfo, extraMembers}) {
+        .then(function ({ roleInfo, extraMembers }) {
           let newMember;
           if (role === "Engineer") {
             newMember = new Engineer(name, id, email, roleInfo);
@@ -86,8 +85,7 @@ function getMemberInfo() {
 }
 
 function startHtml() {
-    const html = 
-    `<!DOCTYPE html>
+  const html = `<!DOCTYPE html>
     <html lang = "en"
     <head>
     <meta charset="UTF-8" />
@@ -104,28 +102,27 @@ function startHtml() {
         <div class = "container">
         <div class  = "row">`;
 
-        fs.writeFile("./output/team.html", html, function(err) {
-            if (err) {
-                console.log(err);
-            }
-        });
-        console.log("start");   
+  fs.writeFile("./output/team.html", html, function (err) {
+    if (err) {
+      console.log(err);
+    }
+  });
+  console.log("start");
 }
 
 function addHtml(member) {
-    return new Promise(function(resolve, reject) {
-        const name = member.getName();
-        const id = member.getId();
-        const email = member.getEmail();
-        const role = member.getRole();
-        let data = '';
-        
-        if (role === "Engineer") {
-            const gitHub = member.getGithub();
+  return new Promise(function (resolve, reject) {
+    const name = member.getName();
+    const id = member.getId();
+    const email = member.getEmail();
+    const role = member.getRole();
+    let data = "";
 
-            data = 
-            `<div class = 'col-6>
-            <div class = ' card mx-auto mb-3' style = 'width 18rem'>
+    if (role === "Engineer") {
+      const gitHub = member.getGithub();
+
+      data = `<div class = 'col-4'>
+            <div class = 'card mx-auto mb-3 text-center' style = 'width 18rem'>
             <h5 class = 'card-header'>${name}<br /> <br />Engineer</h5>
             <ul class = 'list-group list-group-flush'>
                 <lli class = 'list-group-item'>ID: ${id}</lli>
@@ -134,13 +131,11 @@ function addHtml(member) {
             </ul>
             </div>
             </div>`;
-        }
-        else if (role === "Intern") {
-            const school = member.getSchool();
-            data = 
-            `<div class = 'col-6>
-            <div class = ' card mx-auto mb-3' style = 'width 18rem'>
-            <h5 class = 'card-header'>${name}<br /> <br />Engineer</h5>
+    } else if (role === "Intern") {
+      const school = member.getSchool();
+      data = `<div class = 'col-4'>
+            <div class = 'card mx-auto mb-3 text-center' style = 'width 18rem'>
+            <h5 class = 'card-header'>${name}<br /> <br />Intern</h5>
             <ul class = 'list-group list-group-flush'>
                 <lli class = 'list-group-item'>ID: ${id}</lli>
                 <lli class = 'list-group-item'>Email: ${email}</lli>
@@ -148,13 +143,11 @@ function addHtml(member) {
             </ul>
             </div>
             </div>`;
-
-        }
-        else {
-            const officeNumber = member.getOfficeNumber();
-            `<div class = 'col-6>
-            <div class = ' card mx-auto mb-3' style = 'width 18rem'>
-            <h5 class = 'card-header'>${name}<br /> <br />Engineer</h5>
+    } else {
+      const officeNumber = member.getOfficeNumber();
+      data = `<div class = 'col-4'>
+            <div class = 'card mx-auto mb-3 text-center' style = 'width 18rem'>
+            <h5 class = 'card-header'>${name}<br /> <br />Manager</h5>
             <ul class = 'list-group list-group-flush'>
                 <lli class = 'list-group-item'>ID: ${id}</lli>
                 <lli class = 'list-group-item'>Email: ${email}</lli>
@@ -162,33 +155,31 @@ function addHtml(member) {
             </ul>
             </div>
             </div>`;
-        }
+    }
 
-        console.log("New Team Member Added");
-        fs.appendFile("./output/team.html", data, function (err){
-        if (err) {
-            return reject(err);
-        };
-        return resolve();
-
+    console.log("New Team Members Added");
+    fs.appendFile("./output/team.html", data, function (err) {
+      if (err) {
+        return reject(err);
+      }
+      return resolve();
     });
-});
-
+  });
 }
 
 function finishHtml() {
-    const html = `</div>
+  const html = `</div>
     </div>
     
     </body>
     </html>`;
 
-    fs.appendFile("./utput/team.html", html, function (err) {
-        if (err) {
-            console.log(err);
-        }
-    })
-    console.log("end")
+  fs.appendFile("./output/team.html", html, function (err) {
+    if (err) {
+      console.log(err);
+    }
+  });
+  console.log("Thank You!");
 }
 
 init();
