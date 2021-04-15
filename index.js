@@ -93,6 +93,8 @@ function startHtml() {
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
         <title>Team Profile Generator</title>
         </head>
         <body>
@@ -121,37 +123,40 @@ function addHtml(member) {
     if (role === "Engineer") {
       const gitHub = member.getGithub();
 
-      data = `<div class = 'col-4'>
-            <div class = 'card mx-auto mb-3 text-center' style = 'width 18rem'>
-            <h5 class = 'card-header'>${name}<br /> <br />Engineer</h5>
+      data = `
+      <div class = 'col-lg-4 col-md-12 mb-4'>
+            <div class = 'card mx-auto mb-3 text-center bg-danger' style = 'width 18rem'>
+            <h5 class = 'card-header'>${name}<br /> <br /><i class="fas fa-glasses"></i> Engineer</h5>
             <ul class = 'list-group list-group-flush'>
-                <lli class = 'list-group-item'>ID: ${id}</lli>
-                <lli class = 'list-group-item'>Email: ${email}</lli>
-                <lli class = 'list-group-item'>Github: ${gitHub}</lli>
+                <li class = 'list-group-item'>ID: ${id}</li>
+                <li class = 'list-group-item'>Email: ${email}</li>
+                <li class = 'list-group-item'>Github: ${gitHub}</li>
             </ul>
             </div>
             </div>`;
     } else if (role === "Intern") {
       const school = member.getSchool();
-      data = `<div class = 'col-4'>
-            <div class = 'card mx-auto mb-3 text-center' style = 'width 18rem'>
-            <h5 class = 'card-header'>${name}<br /> <br />Intern</h5>
+      data = `
+      <div class = 'col-lg-4 col-md-12 mb-4'>
+            <div class = 'card mx-auto mb-3 text-center bg-danger' style = 'width 18rem'>
+            <h5 class = 'card-header'>${name}<br /> <br /><i class="fas fa-user-graduate"></i> Intern</h5>
             <ul class = 'list-group list-group-flush'>
-                <lli class = 'list-group-item'>ID: ${id}</lli>
-                <lli class = 'list-group-item'>Email: ${email}</lli>
-                <lli class = 'list-group-item'>School: ${school}</lli>
+                <li class = 'list-group-item'>ID: ${id}</li>
+                <li class = 'list-group-item'>Email: ${email}</li>
+                <li class = 'list-group-item'>School: ${school}</li>
             </ul>
             </div>
             </div>`;
     } else {
       const officeNumber = member.getOfficeNumber();
-      data = `<div class = 'col-4'>
-            <div class = 'card mx-auto mb-3 text-center' style = 'width 18rem'>
-            <h5 class = 'card-header'>${name}<br /> <br />Manager</h5>
+      data = `
+      <div class = 'col-lg-4 col-md-12 mb-4'>
+            <div class = 'card mx-auto mb-3 text-center bg-danger' style = 'width 18rem'>
+            <h5 class = 'card-header'>${name}<br /> <br /><i class="fas fa-mug-hot"></i> Manager</h5>
             <ul class = 'list-group list-group-flush'>
-                <lli class = 'list-group-item'>ID: ${id}</lli>
-                <lli class = 'list-group-item'>Email: ${email}</lli>
-                <lli class = 'list-group-item'>Office Number: ${officeNumber}</lli>
+                <li class = 'list-group-item'>ID: ${id}</li>
+                <li class = 'list-group-item'>Email: ${email}</li>
+                <li class = 'list-group-item'>Office Number: ${officeNumber}</li>
             </ul>
             </div>
             </div>`;
@@ -168,7 +173,8 @@ function addHtml(member) {
 }
 
 function finishHtml() {
-  const html = `</div>
+  const html = `
+    </div>
     </div>
     
     </body>
