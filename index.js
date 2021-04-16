@@ -1,4 +1,4 @@
-// get js file for classes, require and store data
+// get js file for classes, require and store data/ fs/inquirer
 const inquirer = require("inquirer");
 const fs = require("fs");
 const Engineer = require("./lib/engineer");
@@ -112,7 +112,7 @@ function startHtml() {
       <title>Team Profile Generator</title>
   </head>
   <body>
-      <nav class ="navbar navbar-dark bg-danger mb-5">
+      <nav class ="navbar navbar-dark bg-danger mb-5 d-block">
       <span class="navbar-brand p-5 mb-0 h1 w-100 text-center">Team Member Profile</span>
       </nav>
         <div class = "container">
@@ -140,11 +140,11 @@ function addHtml(member) {
       data = `
         <div class = 'col-lg-4 col-md-12 mb-4'>
           <div class = 'card mx-auto mb-3 text-center bg-primary' style = 'max-width 18rem'>
-            <h5 class = 'card-header'>${name}<br /> <br /><i class="fas fa-glasses"></i> Engineer</h5>
-            <ul class = 'list-group list-group-flush'>
-                <li class = 'list-group-item'>ID: # ${id}</li>
-                <li class = 'list-group-item text-capitalize'>Email: <a href="mailto:${email}">${email}</a></li>
-                <li class = 'list-group-item text-capitalize'>Github: <a href="http://github.com/${gitHub}" target="_blank">${gitHub}</a></li>
+            <h5 class = 'card-header text-white'>${name}<br /> <br /><i class="fas fa-glasses"></i> Engineer</h5>
+            <ul class = 'list-group list-group-flush p-3 bg-light'>
+                <li class = 'list-group-item border m-1'>ID: # ${id}</li>
+                <li class = 'list-group-item text-capitalize border m-1'>Email: <a href="mailto:${email}">${email}</a></li>
+                <li class = 'list-group-item text-capitalize border m-1'>Github: <a href="http://github.com/${gitHub}" target="_blank">${gitHub}</a></li>
             </ul>
           </div>
         </div>`;
@@ -154,11 +154,11 @@ function addHtml(member) {
       data = `
       <div class = 'col-lg-4 col-md-12 mb-4'>
           <div class = 'card mx-auto mb-3 text-center bg-primary' style = 'max-width 18rem'>
-            <h5 class = 'card-header'>${name}<br /> <br /><i class="fas fa-user-graduate"></i> Intern</h5>
-            <ul class = 'list-group list-group-flush'>
-                <li class = 'list-group-item'>ID: # ${id}</li>
-                <li class = 'list-group-item text-capitalize'>Email: <a href="mailto:${email}">${email}</a></li>
-                <li class = 'list-group-item text-capitalize'>School: ${school}</li>
+            <h5 class = 'card-header text-white'>${name}<br /> <br /><i class="fas fa-user-graduate"></i> Intern</h5>
+            <ul class = 'list-group list-group-flush p-3 bg-light'>
+                <li class = 'list-group-item border m-1'>ID: # ${id}</li>
+                <li class = 'list-group-item text-capitalize border m-1'>Email: <a href="mailto:${email}">${email}</a></li>
+                <li class = 'list-group-item text-capitalize border m-1'>School: ${school}</li>
             </ul>
           </div>
         </div>`;
@@ -168,11 +168,11 @@ function addHtml(member) {
       data = `
       <div class = 'col-lg-4 col-md-12 mb-4'>
           <div class = 'card mx-auto mb-3 text-center bg-primary' style = 'max-width 18rem'>
-            <h5 class = 'card-header'>${name}<br /> <br /><i class="fas fa-mug-hot"></i> Manager</h5>
-            <ul class = 'list-group list-group-flush'>
-                <li class = 'list-group-item'>ID: # ${id}</li>
-                <li class = 'list-group-item text-capitalize'>Email: <a href="mailto:${email}">${email}</a></li>
-                <li class = 'list-group-item'>Office Number: ${officeNumber}</li>
+            <h5 class = 'card-header text-white'>${name}<br /> <br /><i class="fas fa-mug-hot"></i> Manager</h5>
+            <ul class = 'list-group list-group-flush p-3 bg-light'>
+                <li class = 'list-group-item border m-1'>ID: # ${id}</li>
+                <li class = 'list-group-item text-capitalize border m-1'>Email: <a href="mailto:${email}">${email}</a></li>
+                <li class = 'list-group-item border m-1'>Office Number: ${officeNumber}</li>
             </ul>
           </div>
         </div>`;

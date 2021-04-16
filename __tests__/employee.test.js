@@ -42,7 +42,7 @@ describe("Employee", () => {
         
     describe("getEmail", () => {
         it("Can get email via getEmail()", () => {
-            const testValue = "Jbarbanel@gtest.com";
+            const testValue = "Jbarbanel@test.com";
             const e = new Employee("Jason", 1, testValue);
             expect(e.getEmail()).toBe(testValue);
         });
