@@ -90,15 +90,23 @@ The test using jest can be invoked by using the following command:
 npm run test
 ```
 
+
+### Click link to open in your browser.
+
+
+
 Walkthrough video: 
 
+https://drive.google.com/file/d/1VgIwVyldUmic2c8Xd_jPMkAXgHCG6qnG/view?usp=sharing
+
  
-
-
-
 Screen Shot of Generated Readme:
 
-![ScreenShot](IMG/application-readme-generator-screenshot.png "Generated team.html")
+
+![ScreenShot](img/videos/Team-Profile-Generator-HTML-Demo.gif "Generated team.html")
+
+
+[Github Repository Site] https://github.com/Jbarbss/Team-Profile-Generator
 
  
 ## Contributions
